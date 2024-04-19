@@ -18,8 +18,8 @@ class BaseGroup(BaseObject):
         self._client = client
         self.id = id
     
-    def extend(self):
-        return self._client.get_group(self.id)
+    async def extend(self):
+        return await self._client.get_group(self.id)
     
         
 class Group(BaseGroup):

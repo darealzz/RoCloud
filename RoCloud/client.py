@@ -10,8 +10,8 @@ class Client:
     def __repr__(self) -> str:
         return f'<{self.__class__.__name__}>'
 
-    def get_group(self, id: int) -> Group:
-        response = self._session.get(BASE_VERSION_TWO, f'/groups/{id}')
+    async def get_group(self, id: int) -> Group:
+        response = await self._session.get(BASE_VERSION_TWO, f'/groups/{id}')
         return Group(self, response.json())
     
     def get_universe(): pass
